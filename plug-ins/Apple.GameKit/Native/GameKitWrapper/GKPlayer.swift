@@ -28,6 +28,16 @@ public func GKPlayer_GetTeamPlayerId
     return player.teamPlayerID.toCharPCopy();
 }
 
+@_cdecl("GKPlayer_GetDeprecatedPlayerId")
+public func GKPlayer_GetDeprecatedPlayerId
+(
+    pointer : UnsafeMutablePointer<GKPlayer>
+) -> char_p
+{
+    let player = pointer.takeUnretainedValue();
+    return player.playerID.toCharPCopy();
+}
+
 @_cdecl("GKPlayer_GetScopedIDsArePersistent")
 public func GKPlayer_GetScopedIDsArePersistent
 (
