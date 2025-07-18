@@ -1,6 +1,10 @@
 # Apple Unity Plug-Ins
 
-Note: See the [2025-beta1](https://github.com/apple/unityplugins/tree/2025-beta1) branch for updates to the Apple.GameKit and Apple.PHASE plug-ins to support new features and APIs announced at WWDC '25 on June 9, 2025.
+This is a special beta release of the following plug-ins to coincide with WWDC '25 on June 9, 2025.
+* Apple.GameKit version 4.0.0
+* Apple.PHASE version 1.2.6
+
+NOTE: Xcode 17 is required to build this beta release of the plug-ins. Please visit https://developer.apple.com to download the latest beta release of Xcode 17.
 
 ## Overview
 The Apple Unity Plug-Ins expose a selection of Apple platform frameworks to Unity developers.
