@@ -33,6 +33,11 @@ namespace Apple.GameKit
         public string TeamPlayerId => Interop.GKPlayer_GetTeamPlayerId(Pointer);
 
         /// <summary>
+        /// A unique identifier for a player of the game.
+        /// </summary>
+        public string DeprecatedPlayerId => Interop.GKPlayer_GetDeprecatedPlayerId(Pointer);
+
+        /// <summary>
         /// Returns a Boolean value depending on whether the game and Team ID for this player are persistent or unique to this game instance.
         /// </summary>
         public bool ScopedIdsArePersistent => Interop.GKPlayer_GetScopedIdsArePersistent(Pointer);
@@ -107,6 +112,8 @@ namespace Apple.GameKit
             public static extern string GKPlayer_GetGamePlayerId(IntPtr pointer);
             [DllImport(InteropUtility.DLLName)]
             public static extern string GKPlayer_GetTeamPlayerId(IntPtr pointer);
+            [DllImport(InteropUtility.DLLName)]
+            public static extern string GKPlayer_GetDeprecatedPlayerId(IntPtr pointer);
             [DllImport(InteropUtility.DLLName)]
             public static extern bool GKPlayer_GetScopedIdsArePersistent(IntPtr pointer);
             [DllImport(InteropUtility.DLLName)]
