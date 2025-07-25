@@ -172,9 +172,9 @@ namespace Apple.Core
 
                 if (pbxProject != null)
                 {
-                    var entitlementsXCodePath = buildTarget == BuildTarget.StandaloneOSX ? $"{Application.productName}/{Application.productName}.entitlements" : $"{Application.productName}.entitlements";
+                    // var entitlementsXCodePath = buildTarget == BuildTarget.StandaloneOSX ? $"{Application.productName}/{Application.productName}.entitlements" : $"{Application.productName}.entitlements";
                     var targetGuid = buildTarget == BuildTarget.StandaloneOSX ? pbxProject.TargetGuidByName(Application.productName) : pbxProject.GetUnityMainTargetGuid();
-                    pbxProject.AddBuildProperty(targetGuid, "CODE_SIGN_ENTITLEMENTS", entitlementsXCodePath);
+                    pbxProject.AddBuildProperty(targetGuid, "CODE_SIGN_ENTITLEMENTS", entitlementsPath);
 
                     LogDevelopmentMessage("OnPostProcessBuild", $"Writing changes to PBXProject {pbxProjectPath}");
                     pbxProject.WriteToFile(pbxProjectPath);
