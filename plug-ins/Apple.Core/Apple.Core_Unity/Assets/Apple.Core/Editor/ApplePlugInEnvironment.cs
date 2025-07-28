@@ -143,7 +143,7 @@ namespace Apple.Core
         static ApplePlugInEnvironment()
         {
             _appleUnityPackages = new Dictionary<string, AppleUnityPackage>();
-            _packageManagerListRequest = Client.List();
+            _packageManagerListRequest = Client.List(includeIndirectDependencies:true, offlineMode:false);
             Events.registeringPackages += OnPackageManagerRegistrationUpdate;
 
             _trackedAppleConfig = GetAppleBuildConfig();
