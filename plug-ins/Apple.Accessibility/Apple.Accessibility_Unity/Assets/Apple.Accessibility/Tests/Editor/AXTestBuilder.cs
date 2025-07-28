@@ -19,14 +19,14 @@ namespace Apple.Accessibility.UnitTests
 
         public override BuildPlayerOptions ModifyOptions(BuildPlayerOptions playerOptions)
         {
-            Debug.Log("com.apple.unityplugin.accessibility: Modifying test build player options.");
+            Debug.Log("com.dirtybit.apple.unityplugin.accessibility: Modifying test build player options.");
             if (!playerOptions.scenes.ToArray().Contains(_testScene))
             {
                 Debug.Log($"Adding test scene {_testScene} to test build.");
                 playerOptions.scenes = playerOptions.scenes.Append(_testScene).ToArray();
             }
 
-            Debug.Log("com.apple.unityplugin.accessibility: Calling base ModifyOptions.");
+            Debug.Log("com.dirtybit.apple.unityplugin.accessibility: Calling base ModifyOptions.");
             playerOptions = base.ModifyOptions(playerOptions);
 
             return playerOptions;
@@ -34,7 +34,7 @@ namespace Apple.Accessibility.UnitTests
 
         public override void Cleanup()
         {
-            Debug.Log("com.apple.unityplugin.accessibility: Calling base cleanup.");
+            Debug.Log("com.dirtybit.apple.unityplugin.accessibility: Calling base cleanup.");
             base.Cleanup();
         }
     }

@@ -108,7 +108,7 @@ Support for visionOS
 
 ## [1.0.1] - 2022-10-10
 ### Changed
-- Updated package name to `com.apple.unityplugin.core`
+- Updated package name to `com.dirtybit.apple.unityplugin.core`
 
 ## [1.0.0] - 2022-06-02
 ### Added
