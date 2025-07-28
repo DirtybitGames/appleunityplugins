@@ -80,7 +80,7 @@ namespace Apple.Core
         /// <summary>
         /// Used to validate packages as Apple Plug-In packages, all Apple plug-in names (see package.json for any Apple plug-in) begin with this string.
         /// </summary>
-        public static string AppleUnityPackageNamePrefix => "com.dirtybit.apple.unityplugin";
+        public static string AppleUnityPackageNamePrefix => "com.apple.unityplugin";
 
         /// <summary>
         /// Use to validate packages as Apple Plug-In packages, all Apple plug-in author names (see package.json for any Apple plug-in) are exactly this string.
@@ -616,7 +616,7 @@ namespace Apple.Core
     {
         public static string SourceNativeLibraryFolderName => "NativeLibraries~";
         public static string DestinationNativeLibraryFolderName => "ApplePluginLibraries";
-        public static string AppleUnityPackageIdentifier => "com.dirtybit.apple.unityplugin";
+        public static string AppleUnityPackageIdentifier => "com.apple.unityplugin";
         public static bool IsXcodeProjectGeneratedForMac => EditorUserBuildSettings.GetPlatformSettings("OSXUniversal", "CreateXcodeProject") == "true";
 
         /// <summary>

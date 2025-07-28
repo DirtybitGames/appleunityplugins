@@ -14,7 +14,7 @@ namespace Apple.Core
         /// <summary>
         /// This constructor will interrogate the file system in order to fill out a table of associated native libraries for the package.
         /// </summary>
-        /// <param name="name">Matches the 'name' field of the associated package's <c>package.json</c> file. Should be of the form <c>com.dirtybit.apple.unityplugin.XXX</c>.</param>
+        /// <param name="name">Matches the 'name' field of the associated package's <c>package.json</c> file. Should be of the form <c>com.apple.unityplugin.XXX</c>.</param>
         /// <param name="displayName">Matches the 'displayName' field of the associated package's <c>package.json</c> file</param>
         /// <param name="packageSystemPath">The local file system path to the plug-in as provided by the Unity package manager.</param>
         public AppleUnityPackage(string name, string displayName, string packageSystemPath)
@@ -101,7 +101,7 @@ namespace Apple.Core
         /// <summary>
         /// Create a package with default values to act as a representation of a package without native libraries.
         /// </summary>
-        /// <param name="name">Matches the 'name' field of the associated package's <c>package.json</c> file. Should be of the form <c>com.dirtybit.apple.unityplugin.XXX</c>.</param>
+        /// <param name="name">Matches the 'name' field of the associated package's <c>package.json</c> file. Should be of the form <c>com.apple.unityplugin.XXX</c>.</param>
         /// <param name="displayName">Matches the 'displayName' field of the associated package's <c>package.json</c> file</param>
         public AppleUnityPackage(string name, string displayName)
         {
@@ -118,7 +118,7 @@ namespace Apple.Core
         /// Matches the 'name' field of the associated package's <c>package.json</c> file.
         /// </summary>
         /// <remarks>
-        ///  Should be of the form: <c>com.dirtybit.apple.unityplugin.XXX</c>
+        ///  Should be of the form: <c>com.apple.unityplugin.XXX</c>
         /// </remarks>
         public string Name { get; private set; }
 

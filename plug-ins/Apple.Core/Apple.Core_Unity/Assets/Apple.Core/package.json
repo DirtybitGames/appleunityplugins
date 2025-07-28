@@ -1,5 +1,5 @@
 {
-    "name": "com.dirtybit.apple.unityplugin.core",
+    "name": "com.apple.unityplugin.core",
     "displayName": "Apple.Core",
     "description": "Provides project settings, post-build automation tools, and other shared functionality for Apple Unity Plug-ins.",
     "version": "3.1.8",

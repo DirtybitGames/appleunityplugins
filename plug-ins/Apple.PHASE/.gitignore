@@ -62,7 +62,7 @@ Apple.PHASE_Unity/.idea/
 *AudioPluginPHASE.a.meta
 *AudioPluginPHASE.bundle/*
 *AudioPluginPHASE.bundle.meta
-*com.dirtybit.apple.unityplugin.phase*.tgz
+*com.apple.unityplugin.phase*.tgz
 
 .vs
 *.sln

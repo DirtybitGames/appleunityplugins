@@ -1,11 +1,11 @@
 {
-    "name": "com.dirtybit.apple.unityplugin.phase",
+    "name": "com.apple.unityplugin.phase",
     "displayName": "Apple.PHASE",
     "description": "A Unity plugin for Apple's PHASE.framework.",
     "version": "1.2.5",
     "unity": "2022.3",
     "dependencies": {
-        "com.dirtybit.apple.unityplugin.core": "3.1.8"
+        "com.apple.unityplugin.core": "3.1.8"
     },
     "keywords": [
         "audio",

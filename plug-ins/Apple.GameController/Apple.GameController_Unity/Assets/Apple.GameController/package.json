@@ -1,11 +1,11 @@
 {
-    "name": "com.dirtybit.apple.unityplugin.gamecontroller",
+    "name": "com.apple.unityplugin.gamecontroller",
     "displayName": "Apple.GameController",
     "description": "Exposes Apple's GameController.framework to Unity developers via c# script API.",
     "version": "1.2.4",
     "unity": "2022.3",
     "dependencies": {
-        "com.dirtybit.apple.unityplugin.core": "3.1.8"
+        "com.apple.unityplugin.core": "3.1.8"
     },
     "keywords": [
         "controller",

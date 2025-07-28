@@ -91,7 +91,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.2] - 2022-10-10
 ### Changed
-- Update package name to `com.dirtybit.apple.unityplugin.gamekit`
+- Update package name to `com.apple.unityplugin.gamekit`
 
 ## [1.0.1] - 2022-09-28
 ### Changed

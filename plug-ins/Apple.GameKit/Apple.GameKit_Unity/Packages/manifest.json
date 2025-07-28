@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.dirtybit.apple.unityplugin.core": "file:../../../Apple.Core/Apple.Core_Unity/Assets/Apple.Core",
+    "com.apple.unityplugin.core": "file:../../../Apple.Core/Apple.Core_Unity/Assets/Apple.Core",
     "com.unity.ide.rider": "3.0.36",
     "com.unity.ide.visualstudio": "2.0.23",
     "com.unity.memoryprofiler": "1.1.6",
