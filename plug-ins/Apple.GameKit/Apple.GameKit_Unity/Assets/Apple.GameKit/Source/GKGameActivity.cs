@@ -28,7 +28,11 @@ namespace Apple.GameKit
 
         static GKGameActivity()
         {
+#if UNITY_EDITOR && !UNITY_EDITOR_OSX
+            //Don't do anything.
+#else
             Interop.GKGameActivity_SetWantsToPlayCallback(OnWantsToPlay);
+#endif
         }
 
 #if IOS_19_BETA_1_WANTSTOPLAY_MAIN_THREAD_WORKAROUND

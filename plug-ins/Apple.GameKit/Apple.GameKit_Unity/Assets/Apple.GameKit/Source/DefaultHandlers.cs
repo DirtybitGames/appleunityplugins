@@ -11,7 +11,11 @@ namespace Apple.GameKit
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         public static void Init()
         {
+#if UNITY_EDITOR && !UNITY_EDITOR_OSX
+            //Don't do anything.
+#else
             Interop.DefaultNSExceptionHandler_Set(ThrowNSException);
+#endif
         }
 
         [MonoPInvokeCallback(typeof(NSExceptionCallback))]
@@ -32,7 +36,11 @@ namespace Apple.GameKit
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         public static void Init()
         {
+#if UNITY_EDITOR && !UNITY_EDITOR_OSX
+            //Don't do anything.
+#else
             Interop.DefaultNSErrorHandler_Set(ThrowNSError);
+#endif
         }
 
         [MonoPInvokeCallback(typeof(NSErrorCallback))]
