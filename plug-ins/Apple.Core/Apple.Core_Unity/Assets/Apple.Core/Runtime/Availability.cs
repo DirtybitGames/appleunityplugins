@@ -12,7 +12,12 @@ namespace Apple.Core
         private static extern RuntimeEnvironment AppleCore_GetRuntimeEnvironment();
 
         private static RuntimeEnvironment _runtimeEnvironment;
-        public static RuntimeEnvironment RuntimeEnvironment => _runtimeEnvironment.IsUnknown ? (_runtimeEnvironment = AppleCore_GetRuntimeEnvironment()) : _runtimeEnvironment;
+        public static RuntimeEnvironment RuntimeEnvironment =>
+#if UNITY_EDITOR && !UNITY_EDITOR_OSX
+            _runtimeEnvironment;
+#else
+        _runtimeEnvironment.IsUnknown ? (_runtimeEnvironment = AppleCore_GetRuntimeEnvironment()) : _runtimeEnvironment;
+#endif
 
         /// <summary>
         /// Use to ensure API methods are only called on platforms which support those calls.
