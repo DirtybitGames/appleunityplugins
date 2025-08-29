@@ -301,6 +301,34 @@ public func GKLocalPlayer_FetchItemsForIdentityVerificationSignature
     };
 }
 
+@_cdecl("GKLocalPlayer_GenerateIdentityVerificationSignature")
+public func GKLocalPlayer_GenerateIdentityVerificationSignature
+(
+    gkLocalPlayerPtr: UnsafeMutablePointer<GKLocalPlayer>,
+    taskId: Int64,
+    onSuccess: @escaping SuccessTaskFetchItemsCallback,
+    onError: @escaping NSErrorTaskCallback
+)
+{
+    if #available(macOS 10.10, iOS 7.0, tvOS 9.0, *) {
+        let player = gkLocalPlayerPtr.takeUnretainedValue();
+        player.generateIdentityVerificationSignature(completionHandler: {publicKeyUrl, signature, salt, timestamp, error in
+            if let error = error as? NSError {
+                onError(taskId, error.passRetainedUnsafeMutablePointer());
+                return;
+            }
+
+            onSuccess(taskId,
+                      publicKeyUrl!.absoluteString.toCharPCopy(),
+                      (signature! as NSData).passRetainedUnsafeMutablePointer(),
+                      (salt! as NSData).passRetainedUnsafeMutablePointer(),
+                      UInt64(timestamp));
+        })
+    } else {
+        onError(taskId, NSError(code: GKErrorCodeExtension.unsupportedOperationForOSVersion).passRetainedUnsafeMutablePointer());
+    };
+}
+
 @_cdecl("GKLocalPlayer_LoadDefaultLeaderboardIdentifier")
 public func GKLocalPlayer_LoadDefaultLeaderboardIdentifier
 (
