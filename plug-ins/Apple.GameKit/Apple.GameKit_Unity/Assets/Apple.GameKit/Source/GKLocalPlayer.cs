@@ -83,6 +83,19 @@ namespace Apple.GameKit
         {
             InteropTasks.TrySetExceptionAndRemove<GKIdentityVerificationResponse>(taskId, new GameKitException(errorPointer));
         }
+        
+        /// <summary>
+        /// Generates a signature so that a third-party server can authenticate the local player. Uses the deprecated function for this.
+        /// </summary>
+        /// <returns></returns>
+        [Introduced(iOS: "7.0", macOS: "10.10", tvOS: "9.0")]
+        public Task<GKIdentityVerificationResponse> GenerateIdentityVerificationSignature()
+        {
+            var tcs = InteropTasks.Create<GKIdentityVerificationResponse>(out var taskId);
+            Interop.GKLocalPlayer_GenerateIdentityVerificationSignature(Pointer, taskId, OnFetchItems, OnFetchItemsError);
+            return tcs.Task;
+        }
+        public Task<GKIdentityVerificationResponse> GenerateIdentityItems() => GenerateIdentityVerificationSignature();
         #endregion
         
         #region Authenticate
@@ -451,6 +464,8 @@ namespace Apple.GameKit
             public static extern IntPtr GKLocalPlayer_GetLocal();
             [DllImport(InteropUtility.DLLName)]
             public static extern void GKLocalPlayer_FetchItemsForIdentityVerificationSignature(IntPtr pointer, long taskId, InternalOnFetchItemsHandler onSuccess, NSErrorTaskCallback onError);
+            [DllImport(InteropUtility.DLLName)]
+            public static extern void GKLocalPlayer_GenerateIdentityVerificationSignature(IntPtr pointer, long taskId, InternalOnFetchItemsHandler onSuccess, NSErrorTaskCallback onError);
             [DllImport(InteropUtility.DLLName)]
             public static extern void GKLocalPlayer_SetAuthenticateHandler(long taskId, SuccessTaskCallback<IntPtr> onAuthenticate, NSErrorTaskCallback onAuthenticateError);
             [DllImport(InteropUtility.DLLName)]
