@@ -67,6 +67,7 @@ namespace Apple.GameKit.Sample
             };
             #endif
 
+#if UNITY_IOS || UNITY_STANDALONE_OSX
             _activityButton.ButtonClick += async (sender, args) =>
             {
                 if (Activity != null)
@@ -74,6 +75,7 @@ namespace Apple.GameKit.Sample
                     await GKAccessPoint.Shared.TriggerWithGameActivity(Activity);
                 }
             };
+#endif
 
             _startButton.onClick.AddListener(StartButtonAction);
             _pauseButton.onClick.AddListener(PauseButtonAction);
