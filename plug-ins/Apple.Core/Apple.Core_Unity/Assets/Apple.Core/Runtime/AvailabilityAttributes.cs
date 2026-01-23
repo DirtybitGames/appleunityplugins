@@ -63,8 +63,15 @@ namespace Apple.Core
 
         public override bool IsAvailable(RuntimeEnvironment env)
         {
+            // Unknown platforms (e.g. Android, Windows) are not supported
+            if (env.RuntimeOperatingSystem == RuntimeOperatingSystem.Unknown ||
+                env.RuntimeOperatingSystem == RuntimeOperatingSystem.RuntimeOperatingSystemCount)
+            {
+                return false;
+            }
+
             var osVersion = _osVersions[env.RuntimeOperatingSystem];
-            return 
+            return
                 osVersion.HasValue &&
                 ((env.VersionNumber.Major > osVersion.Value.Major) ||
                  (env.VersionNumber.Major == osVersion.Value.Major && env.VersionNumber.Minor >= osVersion.Value.Minor));
@@ -136,8 +143,15 @@ namespace Apple.Core
 
         public override bool IsAvailable(RuntimeEnvironment env)
         {
+            // Unknown platforms (e.g. Android, Windows) are not supported
+            if (env.RuntimeOperatingSystem == RuntimeOperatingSystem.Unknown ||
+                env.RuntimeOperatingSystem == RuntimeOperatingSystem.RuntimeOperatingSystemCount)
+            {
+                return false;
+            }
+
             var osVersion = _osVersions[env.RuntimeOperatingSystem];
-            var isObsoleted = 
+            var isObsoleted =
                 osVersion.HasValue &&
                 ((env.VersionNumber.Major > osVersion.Value.Major) ||
                  (env.VersionNumber.Major == osVersion.Value.Major && env.VersionNumber.Minor >= osVersion.Value.Minor));
